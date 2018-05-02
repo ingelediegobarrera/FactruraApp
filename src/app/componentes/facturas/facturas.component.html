@@ -1,0 +1,19 @@
+
+<div class="container text-center">
+    <h1 class="display-3">Facturas!</h1>
+    <div class="row">
+      <div class="col-md-12 ">
+        <app-factura-list></app-factura-list>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-4 offset-4 text-center">
+        <a class="btn btn-primary text-white" (click)="onCrearFactura()">
+            <span class="glyphicon glyphicon-search" aria-hidden="true">Crear Factura</span>
+        </a>
+        <a class="btn btn-info text-white" (click)="onVerImpustos()">
+            <span class="glyphicon glyphicon-search" aria-hidden="true">Ver Impuestos</span>
+        </a>
+      </div>
+    </div>
+</div>

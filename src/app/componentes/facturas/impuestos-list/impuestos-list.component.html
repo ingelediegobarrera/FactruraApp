@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-body">
+    <h6 class="text-center">
+      Facturas
+    </h6>
+
+    <div class="row">
+    <div class="form-group">
+        <input
+          type="date"
+          class="form-control"
+          name="fechafactura"
+          [(ngModel)]="fechafactura"
+          placeholder="fecha factura"
+          >
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" (click)="onQuery()">
+             consultar
+        </button>
+
+        </div>
+    </div>
+    <table class="table table-sm table-hover">
+      <thead>
+        <th>nombre</th>
+        <th>valor</th>
+        <th>iva</th>
+        <th>fecha factura</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let factura of facturaList">
+          <td>{{factura.nameclient}}</td>
+          <td>{{factura.valor}}</td>
+          <td>{{factura.iva}}</td>
+          <td>{{factura.fechafactura}}</td>
+
+        </tr>
+      </tbody>
+      <tfoot>
+        <td colspan="2" style="text-align: right">Total IVA:</td>
+        <td>{{totaliva}}</td>
+      </tfoot>
+    </table>
+
+    <div class="form-group">
+      <button class="btn btn-primary" (click)="onFacturas()" >
+           Facturas
+      </button>
+
+    </div>
+  </div>
+</div>

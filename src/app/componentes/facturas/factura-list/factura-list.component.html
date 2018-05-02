@@ -1,0 +1,39 @@
+<div class="card">
+  <div class="card-body">
+    <h6 class="text-center">
+      Facturas
+    </h6>
+    <table class="table table-sm table-hover">
+      <thead>
+        <th>nombre</th>
+        <th>valor</th>
+        <th>iva</th>
+        <th>fecha factura</th>
+        <th>Editar</th>
+        <th>Eliminar</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let factura of facturaList">
+          <td>{{factura.nameclient}}</td>
+          <td>{{factura.valor}}</td>
+          <td>{{factura.iva}}</td>
+          <td>{{factura.fechafactura}}</td>
+          <td>
+            <a class="btn btn-info text-white" (click)="onEdit(factura)">
+                <span class="glyphicon glyphicon-search" aria-hidden="true">Editar</span>
+            </a>
+          </td>
+          <td>
+            <a class="btn btn-primary text-white" (click)="onDelete(factura.$key)">
+                <span class="glyphicon glyphicon-search" aria-hidden="true">Eliminar</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <td colspan="2" style="text-align: right">Total IVA:</td>
+        <td>{{totaliva}}</td>
+      </tfoot>
+    </table>
+  </div>
+</div>
